@@ -1,5 +1,6 @@
 ---
 import logo from '../assets/logo.png';
+import { Image } from 'astro:assets';
 ---
 
 <header class="flex-1 flex flex-row justify-between items-center bg-white p-1 m-1 max-h-16 gap-1">
@@ -9,8 +10,7 @@ import logo from '../assets/logo.png';
         Menu
     </a>
     <div class="flex-1 flex flex-row justify-center items-center">
-        <img
-        src={logo.src} alt="" srcset="">
+        <Image src={logo} alt="" srcset="">
     </div>
     <a
     class="rounded-lg border-2 border-solid border-b-black p-2"

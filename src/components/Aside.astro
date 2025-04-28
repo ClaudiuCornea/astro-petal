@@ -1,22 +1,23 @@
 ---
+import { Picture } from 'astro:assets';
 import logo from '../assets/logo.svg';
 import deliveroo from '../assets/deliveroo.svg';
 import takeaway from '../assets/takeaway.webp';
 import uberEats from '../assets/uberEats.webp';
 ---
 
-<aside class="flex-1 flex flex-col justify-between items-center bg-white p-1 m-1 max-w-16">
+<aside class="w-14 p-2 flex flex-col justify-between items-center bg-white">
     <ul class="flex-1 flex flex-col justify-center items-center gap-4">
         <!-- Logo -->
       <li class="flex-1">
             <a href="/">
-                <img src={logo.src} class="w-full" alt="Astro Homepage" />
+                <Picture src={logo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
         <!-- Pages -->
         <li class="flex-1">
             <a href="/">
-                <img src={logo.src} class="w-full" alt="Astro Homepage" />
+                <Picture src={logo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
         <!-- Shared -->
@@ -24,27 +25,27 @@ import uberEats from '../assets/uberEats.webp';
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="flex rounded-lg border-2 border-solid border-b-black p-2"
+            class="w-full h-full"
             href="https://deliveroo.be/fr/menu/brussels/grand-place/lorchidee-rose/">
-                <img src={deliveroo.src} class="w-full aspect-square" alt="" />
+                <Picture src={deliveroo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
         <li class="flex-0">
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="flex rounded-lg border-2 border-solid border-b-black p-2"
+            class="w-full h-full"
             href="https://www.takeaway.com/be-fr/menu/orchidee-rose">
-                <img src={takeaway.src} class="w-full aspect-square" alt="" />
+                <Picture src={takeaway} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
         <li class="flex-0">
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="flex rounded-lg border-2 border-solid border-b-black p-2"
+            class="w-full h-full"
             href="https://www.ubereats.com/be/store/lorchidee-rose/jlxIyov6SzyuW3HU8GYPnA?diningMode=DELIVERY">
-                <img src={uberEats.src} class="w-full aspect-square" alt="" />
+                <Picture src={uberEats} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
     </ul>

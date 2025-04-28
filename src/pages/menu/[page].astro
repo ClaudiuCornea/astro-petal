@@ -1,9 +1,7 @@
 ---
-import Aside from '../../components/Aside.astro';
-import Header from '../../components/Header.astro';
-import MenuItem from '../../components/MenuItem.astro';
 import Content from '../../components/Content.astro';
 import Main from '../../layouts/Main.astro';
+import MenuAside from '../../components/MenuAside.astro';
 
 export function getStaticPaths() {
   return [
@@ -21,9 +19,10 @@ export function getStaticPaths() {
 const { page } = Astro.params;
 ---
 <Main>
-	<Aside slot="aside" />
-	<Header slot="header" />
 	<Content slot="main">
-		<MenuItem slot="content" />
+		<MenuAside />
+		<div class="flex-10/12">
+
+		</div>
 	</Content>
 </Main>

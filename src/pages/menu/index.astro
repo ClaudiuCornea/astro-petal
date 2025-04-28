@@ -1,15 +1,14 @@
 ---
-import Aside from '../../components/Aside.astro';
-import Header from '../../components/Header.astro';
-import Menu from '../../components/Menu.astro';
 import Content from '../../components/Content.astro';
 import Main from '../../layouts/Main.astro';
+import MenuAside from '../../components/MenuAside.astro';
 ---
 
 <Main>
-	<Aside slot="aside" />
-	<Header slot="header" />
 	<Content slot="main">
-		<Menu slot="content" />
+		<MenuAside />
+		<div class="flex-10/12">
+
+		</div>
 	</Content>
 </Main>

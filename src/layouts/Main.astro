@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import Navbar from '../components/Navbar.astro';
+import Aside from '../components/Aside.astro';
 ---
 
 <!doctype html>
@@ -13,11 +15,10 @@ import '../styles/global.css'
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 	</head>
 	<body class="m-0 w-screen h-screen flex flex-row gap-1 bg-black">
-		<slot name="aside" />
-		<main class="flex-1 flex flex-col">
-			<slot name="header" />
+		<Aside />
+		<main class="flex-1 flex flex-col gap-1">
+			<Navbar />
 			<slot name="main" />
-			<slot name="footer" />
 		</main>
 	</body>
 </html>
