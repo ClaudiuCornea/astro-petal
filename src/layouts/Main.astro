@@ -14,11 +14,11 @@ import Aside from '../components/Aside.astro';
 		<title>Astro Petal</title>
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 	</head>
-	<body class="m-0 w-screen h-screen flex flex-row gap-1 bg-black">
+	<body class="m-0 w-screen h-screen flex flex-row gap-1">
 		<Aside />
-		<main class="flex-1 flex flex-col gap-1">
+		<main class="flex-1 flex flex-col gap-1 items-center">
 			<Navbar />
-			<slot name="main" />
+			<slot />
 		</main>
 	</body>
 </html>

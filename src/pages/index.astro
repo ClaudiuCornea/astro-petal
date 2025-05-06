@@ -4,13 +4,16 @@ import Main from '../layouts/Main.astro';
 ---
 
 <Main>
-	<Content slot="main">
+	<Content>
 		<div class="flex-1 flex flex-col">
 			<div class="p-2 flex-3/5 flex flex-row gap-1">
-				<div class="flex-2/5 flex flex-col justify-around items-center">
-					<h1 class="text-4xl font-bold">
+				<div class="flex-1 lg:flex-2/5 flex flex-col justify-around items-center gap-2 lg:gap-4">
+					<h1 class="text-3xl lg:text-4xl font-bold">
 						L'Orchidee Rose
 					</h1>
+					<div class="h-40 w-full flex lg:hidden">
+						<div class="flex-1 skeleton" />
+					</div>
 					<p>
 							Bacon ipsum dolor amet burgdoggen ribeye boudin chislic frankfurter ball tip shoulder
 							pork belly prosciutto bresaola fatback ham t-bone. Leberkas sirloin tenderloin cow pork,
@@ -26,36 +29,45 @@ import Main from '../layouts/Main.astro';
 						bresaola meatloaf strip steak short loin picanha short ribs t-bone fatback.
 					</p>
 				</div>
-				<div class="flex-3/5 flex justify-center items-center">
-					<div class="aspect-square h-full bg-black" />
+				<div class="divider divider-horizontal" />
+				<div class="flex-3/5 hidden lg:flex">
+					<div class="flex-1 skeleton" />
 				</div>
 			</div>
-			<div class="p-2 flex-2/5 flex flex-row gap-1">
-				<address class="flex-1/5 flex flex-col gap-4">
-					<h2 class="">
+			<div class="divider" />
+			<div class="p-2 flex-2/5 flex flex-col md:flex-row gap-1">
+				<address class="flex-1/5 flex flex-col gap-2 lg:gap-4">
+					<h2 class="text-xl lg:text-2xl font-semibold text-center">
 						Lets connect!
 					</h2>
-					<h3>
+					<h3 class="text-lg lg:text-xl text-center">
 						Phone
 					</h3>
-					<a href="tel:+32-2-514-62-46">
+					<a
+					class="link text-center"
+					href="tel:+32-2-514-62-46">
 						02 514 62 46
 					</a>
-					<a href="tel:+32-497-54-75-86">
+					<a
+					class="link text-center"
+					href="tel:+32-497-54-75-86">
 						0497 54 75 86
 					</a>
-					<h3>
+					<h3 class="text-lg lg:text-xl text-center">
 						Address
 					</h3>
 					<a
+					class="link text-center"
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://maps.app.goo.gl/1hnuL4iT5jvCyP17A">
-						Rue Arteveld, 16
+						Rue Van Arteveld, 16
+						<br />
 						1000 Bruxelles, Belgique
 					</a>
 				</address>
-				<div class="p-2 flex-3/5">
+				<div class="divider divider-horizontal" />
+				<div class="p-2 flex-3/5 hidden lg:card shadow-sm">
 					<iframe
 					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1259.5364850821838!2d4.347128!3d50.848333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c387f14c954b%3A0x9437c01b631627c3!2sRue%20Van%20Artevelde%2016%2C%201000%20Bruxelles%2C%20Belgique!5e0!3m2!1sfr!2sus!4v1744139652777!5m2!1sfr!2sus"
 					style="border:0; width: 100%; height: 100%;"
@@ -63,21 +75,26 @@ import Main from '../layouts/Main.astro';
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade" />
 				</div>
-				<div class="flex-1/5 flex flex-col gap-4">
-					<h2>
+				<div class="divider md:divider-horizontal" />
+				<div class="flex-1/5 flex flex-col gap-2 lg:gap-4">
+					<h2 class="text-xl lg:text-2xl font-semibold text-center">
 						Opening hours
 					</h2>
-					<h3>
+					<h3 class="text-lg lg:text-xl text-center">
 						Monday - Saterday
 					</h3>
-					<p>
-						12:00 - 15:00 / 18:00 - 23:30
+					<p class="text-center">
+						12:00 - 15:00
+						<br />
+						18:00 - 23:30
 					</p>
-					<h3>
+					<h3 class="text-lg lg:text-xl text-center">
 						Sunday
 					</h3>
-					<p>
-						12:00 - 15:00 / 18:00 - 23:00
+					<p class="text-center">
+						12:00 - 15:00
+						<br />
+						18:00 - 23:00
 					</p>
 				</div>
 			</div>

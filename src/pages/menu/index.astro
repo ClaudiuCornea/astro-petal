@@ -5,10 +5,44 @@ import MenuAside from '../../components/MenuAside.astro';
 ---
 
 <Main>
-	<Content slot="main">
+	<Content>
 		<MenuAside />
-		<div class="flex-10/12">
-
+		<div class="p-2 flex-10/12 flex flex-col gap-4">
+			<div class="flex-3/5 flex flex-row">
+				<div class="flex-2/5 flex flex-col justify-around items-center">
+					<h1 class="text-4xl font-bold">
+						Menu
+					</h1>
+					<p>
+							Bacon ipsum dolor amet burgdoggen ribeye boudin chislic frankfurter ball tip shoulder
+							pork belly prosciutto bresaola fatback ham t-bone. Leberkas sirloin tenderloin cow pork,
+							andouille brisket pig spare ribs pork belly ground round.
+							Buffalo swine filet mignon corned beef, tri-tip shankle boudin cow brisket cupim
+							frankfurter turducken. Short ribs sirloin tri-tip leberkas. Fatback ribeye tail pork
+							chop hamburger pork loin. Sirloin chislic turducken beef ribs pig rump.
+					</p>
+					<p>
+						Pork spare ribs t-bone meatloaf rump shankle. Brisket ham ham hock, buffalo shank
+						pig salami tongue spare ribs tail shankle frankfurter tenderloin beef.
+						Corned beef buffalo jowl ball tip meatball. Cow sausage beef drumstick pancetta
+						bresaola meatloaf strip steak short loin picanha short ribs t-bone fatback.
+					</p>
+				</div>
+				<div class="flex-3/5 flex justify-center items-center">
+					<div class="aspect-square h-full skeleton" />
+				</div>
+			</div>
+			<div class="flex-2/5 flex flex-row">
+				<div class="flex-1 flex justify-center items-center">
+					<div class="aspect-square h-full bg-black" />
+				</div>
+				<div class="flex-1 flex justify-center items-center">
+					<div class="aspect-square h-full bg-black" />
+				</div>
+				<div class="flex-1 flex justify-center items-center">
+					<div class="aspect-square h-full bg-black" />
+				</div>
+			</div>
 		</div>
 	</Content>
 </Main>
