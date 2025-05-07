@@ -6,12 +6,12 @@ import Main from '../layouts/Main.astro';
 <Main>
 	<Content>
 		<div class="flex-1 flex flex-col">
-			<div class="p-2 flex-3/5 flex flex-row gap-1">
-				<div class="flex-1 lg:flex-2/5 flex flex-col justify-around items-center gap-2 lg:gap-4">
-					<h1 class="text-3xl lg:text-4xl font-bold">
+			<div class="p-2 flex-3/5 flex lg:hidden flex-row gap-1">
+				<div class="flex-1 flex flex-col justify-around items-center gap-2 lg:gap-4">
+					<h1 class="text-3xl lg:text-4xl font-bold hidden">
 						L'Orchidee Rose
 					</h1>
-					<div class="h-40 w-full flex lg:hidden">
+					<div class="h-32 w-full flex">
 						<div class="flex-1 skeleton" />
 					</div>
 					<p>
@@ -29,13 +29,89 @@ import Main from '../layouts/Main.astro';
 						bresaola meatloaf strip steak short loin picanha short ribs t-bone fatback.
 					</p>
 				</div>
+			</div>
+			<div class="p-2 flex-3/5 hidden lg:flex flex-row gap-1">
+				<div class="flex-2/5 flex flex-col justify-around items-center gap-2 lg:gap-4">
+					<h1 class="text-3xl lg:text-4xl font-bold hidden">
+						L'Orchidee Rose
+					</h1>
+					<p>
+							Bacon ipsum dolor amet burgdoggen ribeye boudin chislic frankfurter ball tip shoulder
+							pork belly prosciutto bresaola fatback ham t-bone. Leberkas sirloin tenderloin cow pork,
+							andouille brisket pig spare ribs pork belly ground round.
+							Buffalo swine filet mignon corned beef, tri-tip shankle boudin cow brisket cupim
+							frankfurter turducken. Short ribs sirloin tri-tip leberkas. Fatback ribeye tail pork
+							chop hamburger pork loin. Sirloin chislic turducken beef ribs pig rump.
+					</p>
+					<p>
+						Pork spare ribs t-bone meatloaf rump shankle. Brisket ham ham hock, buffalo shank
+						pig salami tongue spare ribs tail shankle frankfurter tenderloin beef.
+						Corned beef buffalo jowl ball tip meatball. Cow sausage beef drumstick pancetta
+						bresaola meatloaf strip steak short loin picanha short ribs t-bone fatback.
+					</p>
+				</div>
 				<div class="divider divider-horizontal" />
-				<div class="flex-3/5 hidden lg:flex">
+				<div class="flex-3/5 flex">
 					<div class="flex-1 skeleton" />
 				</div>
 			</div>
 			<div class="divider" />
-			<div class="p-2 flex-2/5 flex flex-col md:flex-row gap-1">
+			<div class="p-2 flex-2/5 flex lg:hidden flex-col sm:flex-row gap-1">
+				<address class="flex-1/5 flex flex-col gap-2 lg:gap-4">
+					<h2 class="text-xl lg:text-2xl font-semibold text-center">
+						Lets connect!
+					</h2>
+					<h3 class="text-lg lg:text-xl text-center">
+						Phone
+					</h3>
+					<a
+					class="link text-center"
+					href="tel:+32-2-514-62-46">
+						02 514 62 46
+					</a>
+					<a
+					class="link text-center"
+					href="tel:+32-497-54-75-86">
+						0497 54 75 86
+					</a>
+					<h3 class="text-lg lg:text-xl text-center">
+						Address
+					</h3>
+					<a
+					class="link text-center"
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://maps.app.goo.gl/1hnuL4iT5jvCyP17A">
+						Rue Van Arteveld, 16
+						<br />
+						1000 Bruxelles, Belgique
+					</a>
+				</address>
+				<div class="divider" />
+				<div class="divider divider-horizontal" />
+				<div class="flex-1/5 flex flex-col gap-2 lg:gap-4">
+					<h2 class="text-xl lg:text-2xl font-semibold text-center">
+						Opening hours
+					</h2>
+					<h3 class="text-lg lg:text-xl text-center">
+						Monday - Saterday
+					</h3>
+					<p class="text-center">
+						12:00 - 15:00
+						<br />
+						18:00 - 23:30
+					</p>
+					<h3 class="text-lg lg:text-xl text-center">
+						Sunday
+					</h3>
+					<p class="text-center">
+						12:00 - 15:00
+						<br />
+						18:00 - 23:00
+					</p>
+				</div>
+			</div>
+			<div class="p-2 flex-2/5 hidden lg:flex flex-row gap-1">
 				<address class="flex-1/5 flex flex-col gap-2 lg:gap-4">
 					<h2 class="text-xl lg:text-2xl font-semibold text-center">
 						Lets connect!
@@ -75,7 +151,7 @@ import Main from '../layouts/Main.astro';
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade" />
 				</div>
-				<div class="divider md:divider-horizontal" />
+				<div class="divider divider-horizontal" />
 				<div class="flex-1/5 flex flex-col gap-2 lg:gap-4">
 					<h2 class="text-xl lg:text-2xl font-semibold text-center">
 						Opening hours

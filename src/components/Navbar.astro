@@ -1,8 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 ---
 
-<header class="h-14 p-2 flex flex-row justify-between items-center bg-white gap-1">
+<!-- <header class="h-14 p-2 flex flex-row justify-between items-center bg-white gap-1">
     <a
     class="h-12 p-2 flex-2/12 flex justify-center items-center"
     href="/menu">
@@ -20,4 +21,28 @@ import logo from '../assets/logo.png';
     href="https://www.thefork.be/restaurant/l-orchidee-rose-r68222">
         Book a table
     </a>
-</header>
+</header> -->
+
+<div class="navbar bg-base-100">
+	<div class="navbar-start">
+		<a
+		href="/menu"
+		class="hidden md:btn btn-soft">
+			Menu
+		</a>
+	</div>
+	<div class="navbar-center">
+	  <a class="">
+		<Image src={logo} alt="L'orchidee Rose" />
+	  </a>
+	</div>
+	<div class="navbar-end">
+		<a
+		target="_blank"
+		rel="noopener noreferrer"
+		href="https://www.thefork.be/restaurant/l-orchidee-rose-r68222"
+		class="hidden md:btn">
+			Book a table
+		</a>
+	</div>
+  </div>
