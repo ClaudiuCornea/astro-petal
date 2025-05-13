@@ -1,28 +1,26 @@
 ---
 const { page } = Astro.params;
----
+const pages =[
+	{ name: 'Appetizers', path: 'appetizers' },
+	{ name: 'Soups', path: 'soups' },
+	{ name: 'Vegetarian', path: 'vegetarian' },
+	{ name: 'Fish and shellfish', path: 'fish-and-shellfish' },
+	{ name: 'Meat', path: 'meat' },
+	{ name: 'Noodles and rice', path: 'noodles-and-rice' },
+	{ name: 'Desserts', path: 'desserts' },
+	{ name: 'Wines', path: 'wines' },
+];
 
-<ul x-data={`{
-	pages: [
-		{'name': 'Appetizers', 'path': '/menu/appetizers', 'active': ${page === 'appetizers'}},
-		{'name': 'Soups', 'path': '/menu/soups', 'active': ${page === 'soups'}},
-		{'name': 'Vegetarian', 'path': '/menu/vegetarian', 'active': ${page === 'vegetarian'}},
-		{'name': 'Fish and shellfish', 'path': '/menu/fish-and-shellfish', 'active': ${page === 'fish-and-shellfish'}},
-		{'name': 'Meat', 'path': '/menu/meat', 'active': ${page === 'meat'}},
-		{'name': 'Noodles and rice', 'path': '/menu/noodles-and-rice', 'active': ${page === 'noodles-and-rice'}},
-		{'name': 'Dessserts', 'path': '/menu/dessserts', 'active': ${page === 'dessserts'}},
-		{'name': 'Wines', 'path': '/menu/wines', 'active': ${page === 'wines'}},
-	]
-}`}
-class="p-2 flex-2/12 flex flex-col justify-between items-center gap-4">
-	<template x-for="(x, index) in pages" :key="index">
-		<li class="w-full h-full flex">
+---
+<ul class="menu bg-base-200 w-56">
+	{pages.map((x) => (
+  		<li>
 			<a
-			class="flex-1 flex justify-center items-center"
-			x-bind:href="x.path"
-			:class="x.active ? 'bg-amber-100' : ''">
-				<span x-text="x.name"></span>
+				class:list={[{ 'menu-active': page === x.path }]}
+				href={`/menu/${x.path}`}
+			>
+				{x.name}
 			</a>
 		</li>
-	</template>
+	))}
 </ul>

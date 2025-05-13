@@ -6,47 +6,46 @@ import takeaway from '../assets/takeaway.webp';
 import uberEats from '../assets/uberEats.webp';
 ---
 
-<aside class="w-14 p-2 hidden md:flex flex-col justify-between items-center bg-white">
+<aside class="w-14 p-2 hidden md:flex flex-col justify-between items-center">
     <ul class="flex-1 flex flex-col justify-center items-center gap-4">
-        <!-- Logo -->
       <li class="flex-1">
             <a href="/">
                 <Picture src={logo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
             </a>
         </li>
-        <!-- Pages -->
-        <li class="flex-1">
-            <a href="/">
-                <Picture src={logo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
-            </a>
-        </li>
-        <!-- Shared -->
         <li class="flex-0">
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full h-full"
+            class="avatar"
             href="https://deliveroo.be/fr/menu/brussels/grand-place/lorchidee-rose/">
-                <Picture src={deliveroo} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
+				<div class="mask mask-squircle w-8">
+                	<Picture src={deliveroo} formats={['avif', 'webp']} alt="" />
+				</div>
             </a>
         </li>
         <li class="flex-0">
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full h-full"
+            class="avatar"
             href="https://www.takeaway.com/be-fr/menu/orchidee-rose">
-                <Picture src={takeaway} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
+				<div class="mask mask-squircle w-8">
+                	<Picture src={takeaway} formats={['avif', 'webp']} alt="" />
+				</div>
             </a>
         </li>
         <li class="flex-0">
             <a
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full h-full"
+            class="avatar"
             href="https://www.ubereats.com/be/store/lorchidee-rose/jlxIyov6SzyuW3HU8GYPnA?diningMode=DELIVERY">
-                <Picture src={uberEats} formats={['avif', 'webp']} class="w-full aspect-square" alt="" />
+				<div class="mask mask-squircle w-8">
+                	<Picture src={uberEats} formats={['avif', 'webp']} alt="" />
+				</div>
             </a>
         </li>
+		<li class="flex-1" />
     </ul>
 </aside>

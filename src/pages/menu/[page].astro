@@ -1,5 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { sanityClient } from "sanity:client";
+
+const items = await sanityClient.fetch(`*[_type == "menu"]`);
+
 import Content from '../../components/Content.astro';
 import Main from '../../layouts/Main.astro';
 import MenuAside from '../../components/MenuAside.astro';
@@ -18,94 +21,67 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.params;
-const menu = await getCollection('menu');
 ---
 <Main>
 	<Content>
 		<MenuAside />
-		<div class="p-2 flex-10/12 flex flex-col" x-data={`{ menu: ${JSON.stringify(menu)} }`}>
-			<template x-for="item in menu" x-data={`{page: '${page}'}`}>
-				<div class="flex-auto flex flex-col h-0 overflow-y-auto gap-2" x-data="{ activeTab: 0 }" x-show="item.id === page">
-					<div class="flex justify-around">
-						<label
-						@click="activeTab = 0"
-						class="tab-control"
-						:class="{ 'active': activeTab === 0 }"
-						>
-							Thai
-						</label>
-						<label
-						@click="activeTab = 1"
-						class="tab-control"
-						:class="{ 'active': activeTab === 1 }"
-						>
-						Chinese
-						</label>
-						<label
-						@click="activeTab = 2"
-						class="tab-control"
-						:class="{ 'active': activeTab === 2 }"
-						>
-							Vientamese
-						</label>
-					</div>
-					<div
-					class="flex-auto flex flex-col h-0 overflow-y-auto gap-2"
-					:class="{ 'active': activeTab === 0 }"
-					x-show.transition.in.opacity.duration.600="activeTab === 0"
-					>
-						<template x-for="x in y" x-data={`{y: item.data}`}>
-							<div x-show="x.origin === 'thailand'">
-								<span x-text="x.name"></span>
-								<span x-text="x.description"></span>
-								<template x-if="x.price.normal">
-									<span x-text="x.price.normal"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.small"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.large"></span>
-								</template>
-							</div>
-						</template>
-					</div>
-					<div class="flex-auto flex flex-col h-0 overflow-y-auto gap-2" :class="{ 'active': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
-						<template x-for="x in y" x-data={`{y: item.data}`}>
-							<div x-show="x.origin === 'china'">
-								<span x-text="x.name"></span>
-								<span x-text="x.description"></span>
-								<template x-if="x.price.normal">
-									<span x-text="x.price.normal"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.small"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.large"></span>
-								</template>
-							</div>
-						</template>
-					</div>
-					<div class="flex-auto flex flex-col h-0 overflow-y-auto gap-2" :class="{ 'active': activeTab === 2 }" x-show.transition.in.opacity.duration.600="activeTab === 2">
-						<template x-for="x in y" x-data={`{y: item.data}`}>
-							<div x-show="x.origin === 'vietnam'">
-								<span x-text="x.name"></span>
-								<span x-text="x.description"></span>
-								<template x-if="x.price.normal">
-									<span x-text="x.price.normal"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.small"></span>
-								</template>
-								<template x-if="!x.price.normal">
-									<span x-text="x.price.large"></span>
-								</template>
-							</div>
-						</template>
-					</div>
-				</div>
-			</template>
+		<div class="tabs tabs-lift">
+			<input type="radio" name="my_tabs" class="tab" aria-label="Thailand" />
+			<div class="tab-content bg-base-100 border-base-300 p-6">
+				{items.map((x: { origin: string; category: string; name: string; description: string }) => {
+					if (x.origin === 'thailand' && x.category === page) {
+						return (
+							<>
+								<p>
+									{x.name}
+								</p>
+								<p>
+									{x.description}
+								</p>
+							</>
+						)
+					}
+				})}
+			</div>
+
+			<input type="radio" name="my_tabs" class="tab" aria-label="China" checked="checked" />
+			<div class="tab-content bg-base-100 border-base-300 p-6">
+				{items.map((x: { origin: string; category: string; name: string; description: string }) => {
+					if (x.origin === 'china' && x.category === page) {
+						return (
+							<>
+								<p>
+									{page}
+								</p>
+								<p>
+									{x.name}
+								</p>
+								<p>
+									{x.description}
+								</p>
+							</>
+						)
+					}
+				})}
+			</div>
+
+			<input type="radio" name="my_tabs" class="tab" aria-label="Vietnam" />
+			<div class="tab-content bg-base-100 border-base-300 p-6">
+				{items.map((x: { origin: string; category: string; name: string; description: string }) => {
+					if (x.origin === 'vietnam' && x.category === page) {
+						return (
+							<>
+								<p>
+									{x.name}
+								</p>
+								<p>
+									{x.description}
+								</p>
+							</>
+						)
+					}
+				})}
+			</div>
 		</div>
 	</Content>
 </Main>
